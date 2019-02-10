@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Dana Kilat</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="ad_id_banner_tes">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="ad_id_interstitial_tes">ca-app-pub-3940256099942544/1033173712</string>
+</resources>
