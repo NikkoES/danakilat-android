@@ -1,5 +1,6 @@
 package com.luckynineapps.danakilat.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -19,12 +20,15 @@ import com.luckynineapps.danakilat.adapters.viewpager.VpAdapter;
 import com.luckynineapps.danakilat.application.MyApp;
 import com.luckynineapps.danakilat.fragments.PerbandinganFragment;
 import com.luckynineapps.danakilat.fragments.PinjamanFragment;
+import com.luckynineapps.danakilat.models.pinjaman.Pinjaman;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements PinjamanFragment.SendMessage {
 
     @BindView(R.id.image_title)
     TextView imageTitle;
@@ -46,6 +50,13 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         initView();
+    }
+
+    @Override
+    public void sendData(List<Pinjaman> message) {
+        String tag = "android:switcher:" + R.id.view_pager_menu + ":" + 1;
+        PerbandinganFragment f = (PerbandinganFragment) getSupportFragmentManager().findFragmentByTag(tag);
+        f.displayReceivedData(message);
     }
 
     public void initView() {

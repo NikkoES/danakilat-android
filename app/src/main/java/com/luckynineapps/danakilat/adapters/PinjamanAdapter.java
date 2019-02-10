@@ -92,7 +92,6 @@ public class PinjamanAdapter extends RecyclerView.Adapter<PinjamanAdapter.MyHold
         holder.cbPinjaman.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                holder.cbPinjaman.setChecked(!holder.cbPinjaman.isChecked());
                 if (holder.cbPinjaman.isChecked()) {
                     onItemCheckListener.onItemCheck(item);
                 } else {

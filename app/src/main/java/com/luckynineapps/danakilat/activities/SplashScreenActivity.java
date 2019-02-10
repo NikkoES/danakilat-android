@@ -45,6 +45,8 @@ public class SplashScreenActivity extends AppCompatActivity {
                                     imageList.add(new ImageSliderModel(slider.getDeskripsi(), WEB_URL_IMAGE_SLIDER + slider.getImage()));
                                 }
                                 Intent i = new Intent(SplashScreenActivity.this, WelcomeActivity.class);
+                                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                 i.putExtra("list", (Serializable) imageList);
                                 startActivity(i);
 

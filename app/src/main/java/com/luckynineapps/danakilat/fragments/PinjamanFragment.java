@@ -1,6 +1,7 @@
 package com.luckynineapps.danakilat.fragments;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -57,6 +58,8 @@ public class PinjamanFragment extends Fragment {
 
     PinjamanAdapter adapter;
 
+    SendMessage SM;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -67,6 +70,21 @@ public class PinjamanFragment extends Fragment {
         initRecyclerView();
 
         return view;
+    }
+
+    public interface SendMessage {
+        void sendData(List<Pinjaman> message);
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        try {
+            SM = (SendMessage) getActivity();
+        } catch (ClassCastException e) {
+            throw new ClassCastException("Error in retrieving data. Please try again");
+        }
     }
 
     private void initRecyclerView() {
@@ -89,13 +107,13 @@ public class PinjamanFragment extends Fragment {
             @Override
             public void onItemCheck(Pinjaman item) {
                 listPinjamanChecked.add(item);
-                Toast.makeText(getActivity(), "" + listPinjamanChecked.size(), Toast.LENGTH_SHORT).show();
+                SM.sendData(listPinjamanChecked);
             }
 
             @Override
             public void onItemUncheck(Pinjaman item) {
                 listPinjamanChecked.remove(item);
-                Toast.makeText(getActivity(), "" + listPinjamanChecked.size(), Toast.LENGTH_SHORT).show();
+                SM.sendData(listPinjamanChecked);
             }
         });
 
