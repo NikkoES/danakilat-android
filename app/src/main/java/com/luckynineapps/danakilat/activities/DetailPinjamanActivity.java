@@ -13,10 +13,13 @@ import android.widget.TextView;
 import com.luckynineapps.danakilat.R;
 import com.luckynineapps.danakilat.models.pinjaman.Pinjaman;
 import com.luckynineapps.danakilat.utils.CommonUtil;
+import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import static com.luckynineapps.danakilat.data.Constant.WEB_URL_IMAGE_FINTECH;
 
 public class DetailPinjamanActivity extends AppCompatActivity {
 
@@ -67,6 +70,7 @@ public class DetailPinjamanActivity extends AppCompatActivity {
     }
 
     private void initView() {
+        Picasso.get().load(WEB_URL_IMAGE_FINTECH + pinjaman.getImage()).into(image);
         txtTitle.setText(pinjaman.getNamaFintech());
         txtNama.setText(pinjaman.getNamaFintech());
         txtBunga.setText(pinjaman.getBunga());

@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
-import com.luckynineapps.danakilat.activities.MainActivity;
+import com.luckynineapps.danakilat.activities.PinjamanActivity;
 
 /**
  * Created by Comp on 7/29/2017.
@@ -60,7 +60,7 @@ public class Session {
 
     public void checkLogin() {
         if (isLoggedIn()) {
-            Intent i = new Intent(_context, MainActivity.class);
+            Intent i = new Intent(_context, PinjamanActivity.class);
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             _context.startActivity(i);
@@ -80,7 +80,7 @@ public class Session {
 
 
         //TODO harusnya ke login activity kalo ada
-        Intent i = new Intent(_context, MainActivity.class);
+        Intent i = new Intent(_context, PinjamanActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         _context.startActivity(i);

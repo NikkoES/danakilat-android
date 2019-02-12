@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.ParsedRequestListener;
+import com.github.paolorotolo.appintro.AppIntro;
 import com.github.paolorotolo.appintro.AppIntro2;
 import com.github.paolorotolo.appintro.AppIntroFragment;
 import com.luckynineapps.danakilat.fragments.SliderFragment;
@@ -25,29 +26,21 @@ import java.util.List;
 import static com.luckynineapps.danakilat.data.Constant.SLIDER;
 import static com.luckynineapps.danakilat.data.Constant.WEB_URL_IMAGE_SLIDER;
 
-public class WelcomeActivity extends AppIntro2 {
-
-    List<ImageSliderModel> list = new ArrayList<>();
+public class WelcomeActivity extends AppIntro {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        list = (List<ImageSliderModel>) getIntent().getSerializableExtra("list");
-
         initSlider();
 
         showSkipButton(false);
+        setDoneText("GOT IT");
     }
 
     private void initSlider() {
-        Log.e("SIZE", "" + list.size());
-        if (list.size() > 0) {
-            for (int i = 0; i < list.size(); i++) {
-                ImageSliderModel sliderModel = list.get(i);
-                addSlide(SliderFragment.newInstance(sliderModel.getName(), sliderModel.getImage_drawable()));
-            }
-        }
+        addSlide(SliderFragment.newInstance(R.layout.fragment_slider_1));
+        addSlide(SliderFragment.newInstance(R.layout.fragment_slider_2));
     }
 
     @Override
@@ -63,7 +56,7 @@ public class WelcomeActivity extends AppIntro2 {
     }
 
     void open() {
-        Intent i = new Intent(this, MainActivity.class);
+        Intent i = new Intent(this, PinjamanActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(i);
