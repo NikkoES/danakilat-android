@@ -21,16 +21,18 @@ public class Session {
 
     int PRIVATE_MODE = 0;
 
-    private static final String PREF_NAME = "pjr-trans";
+    private static final String PREF_NAME = "dana-kilat";
 
     private static final String IS_LOGIN = "IsLoged";
     private static final String IS_FIRST = "IsFisrt";
     private static final String IS_NOT_ALARMT = "IsAlarm";
 
     public static final String KEY_USER = "user";
+    public static final String KEY_COUNT = "count";
     public static final String KEY_ALARM = "alarm";
     public static final String KEY_IP = "IP";
 
+    private int count = 0;
 
     public Session(Context context) {
         this._context = context;
@@ -50,6 +52,14 @@ public class Session {
 
     }
 
+    public void setClickCount(int count) {
+        editor.putInt(KEY_COUNT, count);
+        editor.commit();
+    }
+
+    public int getClickCount() {
+        return count = pref.getInt(KEY_COUNT, 0);
+    }
 
     public String getUser() {
         Gson gson = new Gson();

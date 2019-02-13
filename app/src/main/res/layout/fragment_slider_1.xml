@@ -36,6 +36,6 @@
         android:gravity="center"
         android:textColor="@color/white"
         android:textSize="16sp"
-        android:text="Minimal pinjaman dari Rp. 1.000.000 ( Cukup KTP dan NPWP )\nLengkapi dokumen agar pengajuanmu lebih cepat di setujui tidak pakai ribet\nTerdaftar dan di awasi oleh : OJK" />
+        android:text="Minimal pinjaman dari Rp. 1.000.000 ( Cukup KTP )\nLengkapi dokumen agar pengajuanmu lebih cepat di setujui tidak pakai ribet\nTerdaftar dan di awasi oleh : OJK" />
 
 </LinearLayout>

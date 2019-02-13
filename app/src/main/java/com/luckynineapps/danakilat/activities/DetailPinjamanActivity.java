@@ -6,10 +6,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.luckynineapps.danakilat.R;
 import com.luckynineapps.danakilat.models.pinjaman.Pinjaman;
 import com.luckynineapps.danakilat.utils.CommonUtil;
@@ -53,6 +56,8 @@ public class DetailPinjamanActivity extends AppCompatActivity {
     TextView txtBunga2;
     @BindView(R.id.txt_max_keterlambatan)
     TextView txtMaxKeterlambatan;
+    @BindView(R.id.ad_bottom)
+    AdView bottomAds;
 
     Pinjaman pinjaman;
 
@@ -66,7 +71,14 @@ public class DetailPinjamanActivity extends AppCompatActivity {
 
         pinjaman = (Pinjaman) getIntent().getSerializableExtra("pinjaman");
 
+        initAd();
         initView();
+    }
+
+    private void initAd() {
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+        bottomAds.loadAd(adRequest);
     }
 
     private void initView() {
@@ -75,7 +87,7 @@ public class DetailPinjamanActivity extends AppCompatActivity {
         txtNama.setText(pinjaman.getNamaFintech());
         txtBunga.setText(pinjaman.getBunga());
         txtNominal.setText("Rp. " + CommonUtil.currencyFormat(Long.parseLong(pinjaman.getNominalPinjaman())));
-        txtDeskripsi.setText(pinjaman.getDeskripsiPanjang());
+        txtDeskripsi.setText(Html.fromHtml(pinjaman.getDeskripsiPanjang()));
         txtUsiaPeminjam.setText(pinjaman.getUmurPeminjam());
         txtWargaNegara.setText(pinjaman.getWargaNegara());
         txtDokumen.setText(pinjaman.getDokumen());
