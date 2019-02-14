@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -77,7 +76,7 @@ public class PinjamanAdapter extends RecyclerView.Adapter<PinjamanAdapter.MyHold
     public void onBindViewHolder(final MyHolder holder, final int position) {
         final Pinjaman item = list.get(position);
         this.position = position;
-        holder.txtNama.setText(item.getNamaFintech());
+        holder.txtNama.setText(item.getNamaPinjaman());
         holder.txtDeskripsi.setText(item.getDeskripsiSingkat());
         holder.txtNominal.setText("Rp. " + CommonUtil.currencyFormat(Long.parseLong(item.getNominalPinjaman())));
 

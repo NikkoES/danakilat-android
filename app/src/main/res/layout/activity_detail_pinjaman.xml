@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
     <android.support.design.widget.AppBarLayout
@@ -85,7 +86,7 @@
                         style="@style/FontStyleBold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Namanya"
+                        tools:text="Namanya"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="14sp" />
 
@@ -94,7 +95,7 @@
                         style="@style/FontStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Success"
+                        tools:text="Success"
                         android:textColor="@color/grey_60"
                         android:textSize="12sp" />
 
@@ -109,7 +110,7 @@
                         android:paddingTop="2dp"
                         android:paddingRight="16dp"
                         android:paddingBottom="2dp"
-                        android:text="Rp. 1.000.000"
+                        tools:text="Rp. 1.000.000"
                         android:textColor="@color/grey_60"
                         android:textSize="12sp"
                         android:textStyle="italic" />
@@ -124,161 +125,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Deskripsi Panjang"
-                android:textColor="@color/grey_60"
-                android:textSize="12sp" />
-
-            <TextView
-                style="@style/FontStyleBold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Usia Peminjam :"
+                tools:text="Deskripsi Panjang"
                 android:textColor="@color/grey_60"
                 android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/txt_usia_peminjam"
-                style="@style/FontStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="text"
-                android:textColor="@color/grey_60"
-                android:textSize="12sp" />
-
-            <TextView
-                style="@style/FontStyleBold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Warga Negara :"
-                android:textColor="@color/grey_60"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/txt_warga_negara"
-                style="@style/FontStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="text"
-                android:textColor="@color/grey_60"
-                android:textSize="12sp" />
-
-            <TextView
-                style="@style/FontStyleBold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Dokumen :"
-                android:textColor="@color/grey_60"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/txt_dokumen"
-                style="@style/FontStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="text"
-                android:textColor="@color/grey_60"
-                android:textSize="12sp" />
-
-            <TextView
-                style="@style/FontStyleBold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Bank :"
-                android:textColor="@color/grey_60"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/txt_bank"
-                style="@style/FontStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="text"
-                android:textColor="@color/grey_60"
-                android:textSize="12sp" />
-
-            <TextView
-                style="@style/FontStyleBold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Limit Pinjaman :"
-                android:textColor="@color/grey_60"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/txt_limit_pinjaman"
-                style="@style/FontStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="text"
-                android:textColor="@color/grey_60"
-                android:textSize="12sp" />
-
-            <TextView
-                style="@style/FontStyleBold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Tenor Pinjaman :"
-                android:textColor="@color/grey_60"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/txt_tenor_pinjaman"
-                style="@style/FontStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="text"
-                android:textColor="@color/grey_60"
-                android:textSize="12sp" />
-
-            <TextView
-                style="@style/FontStyleBold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Bunga :"
-                android:textColor="@color/grey_60"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/txt_bunga_2"
-                style="@style/FontStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="text"
-                android:textColor="@color/grey_60"
-                android:textSize="12sp" />
-
-            <TextView
-                style="@style/FontStyleBold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Maksimum Keterlambatan :"
-                android:textColor="@color/grey_60"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/txt_max_keterlambatan"
-                style="@style/FontStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="text"
-                android:textColor="@color/grey_60"
-                android:textSize="12sp" />
 
         </LinearLayout>
 

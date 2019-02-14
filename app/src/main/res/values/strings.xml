@@ -5,4 +5,8 @@
 
     <string name="ad_id_banner_tes">ca-app-pub-3940256099942544/6300978111</string>
     <string name="ad_id_interstitial_tes">ca-app-pub-3940256099942544/1033173712</string>
+
+    <string name="ad_banner_atas">ca-app-pub-3950402057146083/3472252059</string>
+    <string name="ad_banner_bawah">ca-app-pub-3950402057146083/3635903584</string>
+    <string name="ad_interstitial">ca-app-pub-3950402057146083/5112636788</string>
 </resources>

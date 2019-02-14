@@ -1,6 +1,5 @@
 package com.luckynineapps.danakilat.activities;
 
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -40,22 +39,6 @@ public class DetailPinjamanActivity extends AppCompatActivity {
     TextView txtNominal;
     @BindView(R.id.txt_deskripsi)
     TextView txtDeskripsi;
-    @BindView(R.id.txt_usia_peminjam)
-    TextView txtUsiaPeminjam;
-    @BindView(R.id.txt_warga_negara)
-    TextView txtWargaNegara;
-    @BindView(R.id.txt_dokumen)
-    TextView txtDokumen;
-    @BindView(R.id.txt_bank)
-    TextView txtBank;
-    @BindView(R.id.txt_limit_pinjaman)
-    TextView txtLimitPinjaman;
-    @BindView(R.id.txt_tenor_pinjaman)
-    TextView txtTenorPinjaman;
-    @BindView(R.id.txt_bunga_2)
-    TextView txtBunga2;
-    @BindView(R.id.txt_max_keterlambatan)
-    TextView txtMaxKeterlambatan;
     @BindView(R.id.ad_bottom)
     AdView bottomAds;
 
@@ -83,19 +66,11 @@ public class DetailPinjamanActivity extends AppCompatActivity {
 
     private void initView() {
         Picasso.get().load(WEB_URL_IMAGE_FINTECH + pinjaman.getImage()).into(image);
-        txtTitle.setText(pinjaman.getNamaFintech());
-        txtNama.setText(pinjaman.getNamaFintech());
+        txtTitle.setText(pinjaman.getNamaPinjaman());
+        txtNama.setText(pinjaman.getNamaPinjaman());
         txtBunga.setText(pinjaman.getBunga());
         txtNominal.setText("Rp. " + CommonUtil.currencyFormat(Long.parseLong(pinjaman.getNominalPinjaman())));
         txtDeskripsi.setText(Html.fromHtml(pinjaman.getDeskripsiPanjang()));
-        txtUsiaPeminjam.setText(pinjaman.getUmurPeminjam());
-        txtWargaNegara.setText(pinjaman.getWargaNegara());
-        txtDokumen.setText(pinjaman.getDokumen());
-        txtBank.setText(pinjaman.getBank());
-        txtLimitPinjaman.setText(pinjaman.getLimitPinjaman());
-        txtTenorPinjaman.setText(pinjaman.getTenorPinjaman());
-        txtBunga2.setText(pinjaman.getBunga());
-        txtMaxKeterlambatan.setText(pinjaman.getMaxKeterlambatan());
     }
 
     @Override

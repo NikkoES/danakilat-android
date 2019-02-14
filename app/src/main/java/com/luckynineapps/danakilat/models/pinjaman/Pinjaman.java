@@ -18,26 +18,32 @@ public class Pinjaman implements Serializable {
     private String mDeskripsiSingkat;
     @SerializedName("dokumen")
     private String mDokumen;
+    @SerializedName("domisili_peminjam")
+    private String mDomisiliPeminjam;
     @SerializedName("id")
     private String mId;
     @SerializedName("image")
     private String mImage;
-    @SerializedName("keterangan")
-    private String mKeterangan;
+    @SerializedName("lain_lain")
+    private String mLainLain;
     @SerializedName("limit_pinjaman")
     private String mLimitPinjaman;
     @SerializedName("link_aplikasi")
     private String mLinkAplikasi;
     @SerializedName("max_keterlambatan")
     private String mMaxKeterlambatan;
-    @SerializedName("nama_fintech")
-    private String mNamaFintech;
+    @SerializedName("nama_pinjaman")
+    private String mNamaPinjaman;
     @SerializedName("nominal_pinjaman")
     private String mNominalPinjaman;
+    @SerializedName("penghasilan_minimum")
+    private String mPenghasilanMinimum;
     @SerializedName("tenor_pinjaman")
     private String mTenorPinjaman;
     @SerializedName("umur_peminjam")
     private String mUmurPeminjam;
+    @SerializedName("waktu_persetujuan")
+    private String mWaktuPersetujuan;
     @SerializedName("warga_negara")
     private String mWargaNegara;
 
@@ -81,6 +87,14 @@ public class Pinjaman implements Serializable {
         mDokumen = dokumen;
     }
 
+    public String getDomisiliPeminjam() {
+        return mDomisiliPeminjam;
+    }
+
+    public void setDomisiliPeminjam(String domisiliPeminjam) {
+        mDomisiliPeminjam = domisiliPeminjam;
+    }
+
     public String getId() {
         return mId;
     }
@@ -97,12 +111,12 @@ public class Pinjaman implements Serializable {
         mImage = image;
     }
 
-    public String getKeterangan() {
-        return mKeterangan;
+    public String getLainLain() {
+        return mLainLain;
     }
 
-    public void setKeterangan(String keterangan) {
-        mKeterangan = keterangan;
+    public void setLainLain(String lainLain) {
+        mLainLain = lainLain;
     }
 
     public String getLimitPinjaman() {
@@ -129,12 +143,12 @@ public class Pinjaman implements Serializable {
         mMaxKeterlambatan = maxKeterlambatan;
     }
 
-    public String getNamaFintech() {
-        return mNamaFintech;
+    public String getNamaPinjaman() {
+        return mNamaPinjaman;
     }
 
-    public void setNamaFintech(String namaFintech) {
-        mNamaFintech = namaFintech;
+    public void setNamaPinjaman(String namaPinjaman) {
+        mNamaPinjaman = namaPinjaman;
     }
 
     public String getNominalPinjaman() {
@@ -143,6 +157,14 @@ public class Pinjaman implements Serializable {
 
     public void setNominalPinjaman(String nominalPinjaman) {
         mNominalPinjaman = nominalPinjaman;
+    }
+
+    public String getPenghasilanMinimum() {
+        return mPenghasilanMinimum;
+    }
+
+    public void setPenghasilanMinimum(String penghasilanMinimum) {
+        mPenghasilanMinimum = penghasilanMinimum;
     }
 
     public String getTenorPinjaman() {
@@ -159,6 +181,14 @@ public class Pinjaman implements Serializable {
 
     public void setUmurPeminjam(String umurPeminjam) {
         mUmurPeminjam = umurPeminjam;
+    }
+
+    public String getWaktuPersetujuan() {
+        return mWaktuPersetujuan;
+    }
+
+    public void setWaktuPersetujuan(String waktuPersetujuan) {
+        mWaktuPersetujuan = waktuPersetujuan;
     }
 
     public String getWargaNegara() {

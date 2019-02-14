@@ -3,22 +3,18 @@ package com.luckynineapps.danakilat.activities;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.TableLayout;
-import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.luckynineapps.danakilat.R;
-import com.luckynineapps.danakilat.fragments.DialogInformation;
 import com.luckynineapps.danakilat.models.pinjaman.Pinjaman;
 
 import java.util.ArrayList;
@@ -115,6 +111,13 @@ public class PerbandinganActivity extends AppCompatActivity {
                 txtBank.setTextColor(getResources().getColor(R.color.softBlack));
                 txtBank.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
+                TextView txtPenghasilanMinimum = new TextView(this);
+                txtPenghasilanMinimum.setPadding(dp8, dp8, dp8, dp8);
+                txtPenghasilanMinimum.setGravity(Gravity.CENTER);
+                txtPenghasilanMinimum.setBackgroundResource(R.drawable.table_row_right_bg);
+                txtPenghasilanMinimum.setTextColor(getResources().getColor(R.color.softBlack));
+                txtPenghasilanMinimum.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+
                 TextView txtLimitPinjaman = new TextView(this);
                 txtLimitPinjaman.setPadding(dp8, dp8, dp8, dp8);
                 txtLimitPinjaman.setGravity(Gravity.CENTER);
@@ -143,17 +146,42 @@ public class PerbandinganActivity extends AppCompatActivity {
                 txtMaxKeterlambatan.setTextColor(getResources().getColor(R.color.softBlack));
                 txtMaxKeterlambatan.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
+                TextView txtDomisili = new TextView(this);
+                txtDomisili.setPadding(dp8, dp8, dp8, dp8);
+                txtDomisili.setGravity(Gravity.CENTER);
+                txtDomisili.setBackgroundResource(R.drawable.table_row_last_bg);
+                txtDomisili.setTextColor(getResources().getColor(R.color.softBlack));
+                txtDomisili.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+
+                TextView txtWaktuPersetujuan = new TextView(this);
+                txtWaktuPersetujuan.setPadding(dp8, dp8, dp8, dp8);
+                txtWaktuPersetujuan.setGravity(Gravity.CENTER);
+                txtWaktuPersetujuan.setBackgroundResource(R.drawable.table_row_last_bg);
+                txtWaktuPersetujuan.setTextColor(getResources().getColor(R.color.softBlack));
+                txtWaktuPersetujuan.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+
+                TextView txtLainlain = new TextView(this);
+                txtLainlain.setPadding(dp8, dp8, dp8, dp8);
+                txtLainlain.setGravity(Gravity.CENTER);
+                txtLainlain.setBackgroundResource(R.drawable.table_row_last_bg);
+                txtLainlain.setTextColor(getResources().getColor(R.color.softBlack));
+                txtLainlain.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+
                 //set data to text view
                 Pinjaman pinjaman = list.get(i);
-                txtNamaPinjaman.setText(pinjaman.getNamaFintech());
+                txtNamaPinjaman.setText(pinjaman.getNamaPinjaman());
                 txtUmurPeminjam.setText(pinjaman.getUmurPeminjam());
                 txtWargaNegara.setText(pinjaman.getWargaNegara());
                 txtDokumen.setText(pinjaman.getDokumen());
                 txtBank.setText(pinjaman.getBank());
+                txtPenghasilanMinimum.setText(pinjaman.getPenghasilanMinimum());
                 txtLimitPinjaman.setText(pinjaman.getLimitPinjaman());
                 txtTenorPinjaman.setText(pinjaman.getTenorPinjaman());
                 txtBunga.setText(pinjaman.getBunga());
                 txtMaxKeterlambatan.setText(pinjaman.getMaxKeterlambatan());
+                txtDomisili.setText(pinjaman.getDomisiliPeminjam());
+                txtWaktuPersetujuan.setText(pinjaman.getWaktuPersetujuan());
+                txtLainlain.setText(pinjaman.getLainLain());
 
                 //set text view to table row
                 tableRow.addView(txtNamaPinjaman);
@@ -161,10 +189,14 @@ public class PerbandinganActivity extends AppCompatActivity {
                 tableRow.addView(txtWargaNegara);
                 tableRow.addView(txtDokumen);
                 tableRow.addView(txtBank);
+                tableRow.addView(txtPenghasilanMinimum);
                 tableRow.addView(txtLimitPinjaman);
                 tableRow.addView(txtTenorPinjaman);
                 tableRow.addView(txtBunga);
                 tableRow.addView(txtMaxKeterlambatan);
+                tableRow.addView(txtDomisili);
+                tableRow.addView(txtWaktuPersetujuan);
+                tableRow.addView(txtLainlain);
 
                 layoutPerbandingan.addView(tableRow);
             }
@@ -173,14 +205,11 @@ public class PerbandinganActivity extends AppCompatActivity {
         }
     }
 
-    @OnClick({R.id.btn_information, R.id.btn_share, R.id.btn_pinjaman})
+    @OnClick({R.id.btn_back, R.id.btn_share, R.id.btn_pinjaman})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.btn_information:
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                DialogInformation fragment1 = new DialogInformation();
-                fragment1.setCancelable(true);
-                fragment1.show(fragmentManager, "Dialog Information");
+            case R.id.btn_back:
+                finish();
                 break;
             case R.id.btn_share:
                 Intent sharingIntent = new Intent(Intent.ACTION_SEND);

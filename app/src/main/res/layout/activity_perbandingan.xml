@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -25,11 +25,11 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/btn_information"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:id="@+id/btn_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_info"
+                    android:src="@drawable/ic_arrow_back"
                     android:tint="@color/white" />
 
                 <TextView
@@ -147,6 +147,16 @@
                         android:background="@drawable/table_row_bg"
                         android:gravity="center"
                         android:padding="8dp"
+                        android:text="Penghasilan Minimum"
+                        android:textColor="@color/softBlack"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/table_row_bg"
+                        android:gravity="center"
+                        android:padding="8dp"
                         android:text="Limit Pinjaman"
                         android:textColor="@color/softBlack"
                         android:textStyle="bold" />
@@ -174,10 +184,40 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/table_row_last"
+                        android:background="@drawable/table_row_bg"
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="Max Keterlambatan"
+                        android:textColor="@color/softBlack"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/table_row_bg"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Domisili Peminjam"
+                        android:textColor="@color/softBlack"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/table_row_bg"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Waktu Persetujuan"
+                        android:textColor="@color/softBlack"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/table_row_last"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Lain-lain"
                         android:textColor="@color/softBlack"
                         android:textStyle="bold" />
 
